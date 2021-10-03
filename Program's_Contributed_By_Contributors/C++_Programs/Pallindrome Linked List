@@ -1,0 +1,31 @@
+#include "ll1.h"
+pallindromecheck(struct node**start1)
+{
+    struct node *p,*q;
+    p=start1;
+    q=NULL;
+    q->next=reverse1(&p);
+    while(q!=NULL){
+        printf("\t%d",q->data);
+        q=q->next;
+    }
+}
+
+int main()
+{
+    struct node*start1=NULL;
+    insend(&start1,10);
+    insend(&start1,20);
+    insend(&start1,30);
+    insend(&start1,40);
+    insend(&start1,50);
+    insend(&start1,60);
+    insend(&start1,70);
+    insend(&start1,80);
+    traverse(start1);
+    printf("\n\n");
+    reverse1(&start1);
+    traverse(start1);
+    printf("\n\n");
+    pallindromecheck(&start1);
+}
