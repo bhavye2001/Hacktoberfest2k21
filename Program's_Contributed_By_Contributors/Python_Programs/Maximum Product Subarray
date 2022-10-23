@@ -1,0 +1,16 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        p=1
+        r=-10000000000000000
+        for i in range(len(nums)):
+            p=p*nums[i]
+            r=max(r,p)
+            if(p==0):
+                p=1
+        p=1
+        for i in range(len(nums)-1,-1,-1):
+            p=p*nums[i]
+            r=max(r,p)
+            if(p==0):
+                p=1
+        return r
